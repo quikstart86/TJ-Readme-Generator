@@ -22,6 +22,12 @@ const questions = [
     },
     {
         type: 'input',
+        name: 'deployed app',
+        message: 'Please enter the link to the project repo...',
+        message: 'Please enter the link to the project demo...',
+    },
+    {
+        type: 'input',
         name: 'usage',
         message: 'Please enter details on how to correctly use your application...',
     },
