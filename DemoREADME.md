@@ -2,7 +2,7 @@
 
 
 ## Description
-project base don automting a readme/or any other file generator
+Project based on automating a readme/or any other file generator.
 
 ## Table Of Contents
 - [Description](#description)
@@ -15,7 +15,7 @@ project base don automting a readme/or any other file generator
 - [Questions](#questions)
 
 ## Usage 
-lauching the app with 'node index.js'
+launching the app with `node index.js`
 
 ## License 
 This project is licensed under the MIT license. 
