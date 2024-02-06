@@ -45,7 +45,7 @@ const questions = [
     {
         type: 'input',
         name: 'tests',
-        message: 'Please state here any tests that took place...',
+        message: 'Please state any tests performed...',
     },
     {
         type: 'input',
