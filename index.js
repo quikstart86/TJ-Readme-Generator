@@ -22,12 +22,6 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'deployed app',
-        message: 'Please enter the link to the project repo...',
-        message: 'Please enter the link to the project demo...',
-    },
-    {
-        type: 'input',
         name: 'usage',
         message: 'Please enter details on how to correctly use your application...',
     },
@@ -43,6 +37,12 @@ const questions = [
         message: 'Please enter details of anyone who contributed to this application...',
     },
     {
+        type: 'list',
+        name: 'badge',
+        message: 'Please choose the main language you used for this project...',
+        choices: [`Node`, `React`, `Angular`, `Python`],
+    },
+    {
         type: 'input',
         name: 'tests',
         message: 'Please state any tests performed...',
@@ -50,12 +50,12 @@ const questions = [
     {
         type: 'input',
         name: 'github',
-        message: 'Please link your github here...',
+        message: 'Please enter your github user name here...',
     },
     {
         type: 'input',
         name: 'email',
-        message: 'And finally, what is your email address...',
+        message: 'And finally, what is your email address to be able to contact you...',
     },
 ];
 
@@ -70,7 +70,7 @@ function init() {
         .prompt(questions)
         .then((answers) => {
             const READMEContent = generateMarkdown(answers);
-            const outputFileName = 'README.md';
+            const outputFileName = 'DemoREADME.md';
 
             writeToFile(outputFileName, READMEContent);
 
