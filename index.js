@@ -1,9 +1,9 @@
-const fs = require("fs");
-const path = require('path');
-const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
+// Importing required modules
+const fs = require("fs"); // File system module
+const inquirer = require("inquirer"); // Inquirer module for user prompts
+const generateMarkdown = require("./utils/generateMarkdown"); // Custom module for generating markdown files
 
-// array of questions for user
+// Array of questions for user
 const questions = [
     {
         type: 'input',
@@ -59,25 +59,29 @@ const questions = [
     },
 ];
 
-// function to write README file
+// Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, data);
 }
 
-// function to initialize program
+// Function to initialise program
 function init() {
+    // Prompting user with questions
     inquirer
         .prompt(questions)
         .then((answers) => {
+            // Generating markdown content based on user's answers
             const READMEContent = generateMarkdown(answers);
-            const outputFileName = 'DemoREADME.md';
+            const outputFileName = 'DemoREADME.md'; // Output file name
 
+            // Writing generated markdown content to file
             writeToFile(outputFileName, READMEContent);
 
+            // Logging success message
             console.log(`${outputFileName} successfully generated!`);
         })
         .catch((err) => console.error(err));
 }
 
-// function call to initialize program
+// Initialising the program
 init();
